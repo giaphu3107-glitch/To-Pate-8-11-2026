@@ -254,4 +254,17 @@
             let album = document.querySelector('.album');
             let firstCard = album.firstElementChild; 
             let topCard = album.lastElementChild;
+            topCard.style.zIndex = "1";
+album.insertBefore(topCard, firstCard);
+setTimeout(() => {
+let currentCards = document.querySelectorAll('.img-card');
+currentCards.forEach((c, idx) => {
+if (idx === currentCards.length - 1) {
+c.style.zIndex = "2";
+} else {
+c.style.zIndex = "1";
+}
+});
+}, 50);
+}
 
